@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>the truth untold — free dome.</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+    <header>
+
+        <button class="menu-button">☰</button>
+
+        <div class="logo">
+            free dome.
+        </div>
+
+        <button class="favorite-button" onclick="toggleFavorite()">
+            ♡
+        </button>
+
+    </header>
+
+
+    <main>
+
+        
+<section class="product-page">
+
+    <div class="product-page-image">
+
+        <img
+            id="product-page-main-image"
+            src="images/product-1.jpg"
+            alt="the truth untold"
+        >
+
+        <button class="product-arrow product-arrow-left" id="product-prev">
+            ‹
+        </button>
+
+        <button class="product-arrow product-arrow-right" id="product-next">
+            ›
+        </button>
+
+    </div>
+
+
+    <div class="product-page-info">
+
+        <h1>the truth untold</h1>
+
+        <p class="product-page-price">160 ₽</p>
+
+
+        <div class="product-section">
+
+            <h3>DESCRIPTION</h3>
+
+            <p>
+                набор из двух значков в фирменной упаковке.
+                можно носить вместе или разделить между собой.
+            </p>
+
+        </div>
+
+
+        <div class="product-section">
+
+            <h3>DETAILS</h3>
+
+            <p>
+                44 mm · 2 pcs<br>
+                glossy finish
+            </p>
+
+        </div>
+
+
+        <div class="product-section">
+
+            <h3>HOW TO ORDER</h3>
+
+            <p>
+                заказ оформляется через Telegram.
+                доставка — СДЭК или Яндекс Доставка.
+            </p>
+
+        </div>
+
+
+<button class="product-page-button" id="buy-button">
+    купить
+</button>
+
+    </div>
+
+</section>
+<div class="order-modal" id="order-modal">
+
+    <div class="order-modal-content">
+
+        <button class="order-modal-close" id="order-modal-close">
+            ×
+        </button>
+
+        <h2>HOW DO YOU WANT TO ORDER?</h2>
+
+        <p class="order-modal-subtitle">
+            выбери удобный способ
+        </p>
+
+
+        <div class="order-options">
+
+            <a
+                href="https://www.wildberries.ru/catalog/1642746826/detail.aspx?targetUrl=GP"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="order-option"
+            >
+                <div>
+                    <h3>OZON</h3>
+                    <p>перейти к товару</p>
+                </div>
+
+                <span>→</span>
+            </a>
+
+
+            <a
+                href="https://www.wildberries.ru/catalog/1642746826/detail.aspx?targetUrl=GP"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="order-option"
+            >
+                <div>
+                    <h3>WILDBERRIES</h3>
+                    <p>перейти к товару</p>
+                </div>
+
+                <span>→</span>
+            </a>
+
+
+            <button class="order-option" id="direct-order-button">
+
+                <div>
+                    <h3>DIRECT ORDER</h3>
+                    <p>заказать напрямую</p>
+                </div>
+
+                <span>→</span>
+
+            </button>
+
+        </div>
+
+
+        <div class="direct-order-step" id="direct-order-step">
+
+            <div class="direct-delivery-options">
+
+                <button
+                    class="order-option direct-delivery-option"
+                    id="cdek-button"
+                >
+
+                    <div>
+                        <h3>СДЭК</h3>
+                        <p>доставка до пункта или курьером</p>
+                    </div>
+
+                    <span>→</span>
+
+                </button>
+
+
+                <button class="order-option direct-delivery-option">
+
+                    <div>
+                        <h3>ЯНДЕКС ДОСТАВКА</h3>
+                        <p>доставка до удобного адреса</p>
+                    </div>
+
+                    <span>→</span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="order-modal" id="cdek-modal">
+
+    <div class="order-modal-content">
+
+        <button class="order-modal-close" id="cdek-modal-close">
+            ×
+        </button>
+
+        <h2>DIRECT ORDER</h2>
+
+        <p class="order-modal-subtitle">
+            доставка через СДЭК
+        </p>
+
+
+        <div class="order-form">
+
+            <label>
+                NAME
+
+                <input
+                    type="text"
+                    id="cdek-name"
+                    placeholder="ваше имя"
+                >
+            </label>
+
+
+            <label>
+                TELEGRAM
+
+                <input
+                    type="text"
+                    id="cdek-telegram"
+                    placeholder="@username"
+                >
+            </label>
+
+
+            <label>
+                CITY
+
+                <input
+                    type="text"
+                    id="cdek-city"
+                    placeholder="город"
+                >
+            </label>
+
+
+            <label>
+                СДЭК ПУНКТ
+
+                <input
+                    type="text"
+                    id="cdek-point"
+                    placeholder="адрес или номер пункта"
+                >
+            </label>
+
+
+            <label>
+                QUANTITY
+
+                <input
+                    type="number"
+                    id="cdek-quantity"
+                    value="1"
+                    min="1"
+                >
+            </label>
+
+
+            <button class="order-submit-button" id="cdek-submit">
+                SEND ORDER
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>
